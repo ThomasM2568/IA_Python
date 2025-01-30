@@ -1,5 +1,5 @@
 import pandas as pd
-# Creating the DataFrame
+# Creation of the DataFrame
 df = pd.DataFrame({
     'W': [68.0, 75.0, 86.0, 80.0, None],
     'X': [78.0, 75.0, None, 80.0, 86.0],
@@ -7,10 +7,9 @@ df = pd.DataFrame({
     'Z': [86, 97, 96, 72, 83]
 })
 
-# Creating the Series
+# Creation of the Series
 s = pd.Series([68.0, 75.0, 86.0, 80.0, None])
 
-# Checking for inequality over the index axis
 result = df.ne(s, axis=0)
 
 print("Original DataFrame:")
