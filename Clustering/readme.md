@@ -17,6 +17,7 @@
 - [Conclusion](#conclusion)
 
 ## 1️⃣ Introduction
+<a name="introduction"></a>
 This project implements a clustering visualization tool using Tkinter to display results of K-Means and hierarchical clustering applied to the Iris dataset.
 
 The goal is to analyze whether K-Means and hierarchical clustering correctly group the three species of flowers based on their characteristics.
