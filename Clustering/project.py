@@ -35,8 +35,8 @@ if __name__ == '__main__':
   clusters = kmeans.fit_predict(X)
   
   # Put together species by name
-  species_mapping = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
-  cluster_names = [species_mapping[label] for label in clusters]
+  #species_mapping = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
+  #cluster_names = [species_mapping[label] for label in clusters]
   
   # Reduce dimensions using PCA
   pca = PCA(n_components=2)
@@ -44,7 +44,8 @@ if __name__ == '__main__':
   
   # Create a DataFrame for visualization
   df = pd.DataFrame(X_pca, columns=['PCA1', 'PCA2'])
-  df['Species'] = cluster_names  # Use species names
+  #df['Species'] = cluster_names  # Use species names
+  df['Species'] = clusters
   
   # Show clusters
   plt.figure(figsize=(8, 6))
