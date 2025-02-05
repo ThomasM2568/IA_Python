@@ -1,3 +1,19 @@
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Code Explanation](#-code-explanation)
+  - [Importing Libraries](#-importing-libraries)
+  - [Loading the Iris Dataset](#-loading-the-iris-dataset)
+  - [Applying K-Means](#-applying-k-means)
+  - [Assigning Names to Clusters](#-assigning-names-to-clusters)
+  - [Dimensionality Reduction with PCA](#-dimensionality-reduction-with-pca)
+  - [Creating the DataFrame](#-creating-the-dataframe)
+  - [Visualizing Clusters](#-visualizing-clusters)
+
+
+
 # 1️⃣ Introduction
 
 This project applies the K-Means clustering algorithm to the Iris dataset, reduces the data dimensionality using PCA, and then displays the results as a graph.
