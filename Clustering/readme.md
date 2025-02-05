@@ -126,3 +126,6 @@ plt.show()
 - Displays a colored scatter plot representing clusters.
 - `hue=df['Species']`: colors based on species.
 - `edgecolor='k'`: black edges for better visibility.
+
+### 🔹 Conclusion
+Hierarchical clustering (agglomerative clustering) may not be the most suitable method for this dataset. While we expect three distinct clusters, the algorithm tends to partition the data into only two main clusters. This discrepancy suggests that hierarchical clustering might struggle to capture the natural structure of the dataset, possibly due to the way distances are calculated or the linkage method used. In contrast, other clustering approaches like K-Means may be more effective in correctly identifying the three expected groups.
