@@ -4,7 +4,6 @@
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Code Explanation](#code-explanation)
   - [Importing Libraries](#importing-libraries)
   - [GUI Creation](#gui-creation)
@@ -23,6 +22,7 @@ This project implements a clustering visualization tool using Tkinter to display
 The goal is to analyze whether K-Means and hierarchical clustering correctly group the three species of flowers based on their characteristics.
 
 ## 2️⃣ Prerequisites
+<a name="prerequisites"></a>
 Before running this script, make sure you have the following libraries installed:
 
 - `tkinter` (built-in with Python)
@@ -34,6 +34,7 @@ Before running this script, make sure you have the following libraries installed
 - `ucimlrepo`
 
 ## 3️⃣ Installation
+<a name="installation"></a>
 To install the necessary dependencies, run:
 
 ```sh
@@ -41,8 +42,9 @@ pip install matplotlib seaborn pandas scikit-learn scipy ucimlrepo
 ```
 
 ## 4️⃣ Code Explanation
-
+<a name="code-explanation"></a>
 ### 🔹 Importing Libraries
+<a name="importing-libraries"></a>
 ```python
 import tkinter as tk
 from tkinter import ttk
@@ -65,9 +67,11 @@ import csv
 - **Ucimlrepo**: for fetching the Iris dataset.
 
 ### 🔹 GUI Creation
+<a name="gui-creation"></a>
 The GUI is built using Tkinter with a scrollable interface to display clustering results.
 
 ### 🔹 Loading the Iris Dataset
+<a name="loading-the-iris-dataset"></a>
 ```python
 iris = fetch_ucirepo(id=53)
 X = iris.data.features
@@ -77,6 +81,7 @@ y = iris.data.targets  # Actual species names
 - `y`: contains the species names (Setosa, Versicolor, Virginica).
 
 ### 🔹 Applying K-Means
+<a name="applying-k-means"></a>
 ```python
 kmeans = KMeans(n_clusters=3, init='random', random_state=42)
 clusters = kmeans.fit_predict(X)
@@ -86,12 +91,14 @@ clusters = kmeans.fit_predict(X)
 - `random_state=42`: ensures reproducibility.
 
 ### 🔹 Applying Hierarchical Clustering
+<a name="applying-hierarchical-clustering"></a>
 ```python
 linkage_matrix = linkage(X, method='average')
 ```
 Computes a hierarchical clustering linkage matrix.
 
 ### 🔹 Dimensionality Reduction with PCA
+<a name="dimensionality-reduction-with-pca"></a>
 ```python
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X)
@@ -99,6 +106,7 @@ X_pca = pca.fit_transform(X)
 PCA reduces the 4D data to 2D for visualization.
 
 ### 🔹 Creating the DataFrame
+<a name="creating-the-dataframe"></a>
 ```python
 df = pd.DataFrame(X_pca, columns=['PCA1', 'PCA2'])
 df['Species'] = clusters
@@ -107,7 +115,7 @@ df['Species'] = clusters
 - Adds a `Species` column with cluster names.
 
 ### 🔹 Visualizing Clusters
-
+<a name="visualizing-clusters"></a>
 #### 🔹 K-Means Clustering Plot
 ```python
 plt.figure(figsize=(8, 6))
@@ -130,6 +138,7 @@ plt.show()
 ```
 
 ## Conclusion
+<a name="conclusion"></a>
 While K-Means successfully groups the three expected species, hierarchical clustering may struggle to capture the natural structure of the dataset due to distance calculations and linkage methods.
 
 The GUI allows users to visualize both clustering techniques interactively.
