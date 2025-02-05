@@ -56,7 +56,7 @@ from ucimlrepo import fetch_ucirepo
 - **KMeans**: for clustering.
 - **fetch_ucirepo**: for retrieving the Iris dataset.
 
-## 🔹 Part 1
+## 🔺 Part 1
 
 ### 🔹 Loading the Iris Dataset
 
