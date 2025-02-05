@@ -15,6 +15,7 @@ Clustering project with tkinter GUI for visualization
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
 from sklearn import datasets
 import numpy as np
 
@@ -35,7 +36,7 @@ def main():
     diabeteX = diabete.data[:,:2]
     diabeteY = diabete.target
     
-    X_train, X_test, y_train, y_test = train_test_split(diabeteX,diabeteY,test_size=0.2,random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(irisX,irisY,test_size=0.2,random_state=42)
     """print(f'X_train: {X_train} \n')
     print(f'X_test: {X_test} \n')
     print(f'y_train: {y_train} \n')
@@ -55,6 +56,11 @@ def main():
     print(y_test)
     print(y_pred)
     print(accuracy_score(y_test,y_pred))
+    
+    svc_scores = cross_val_score(clf,X_train,y_train,cv=4)
+    print(svc_scores)
+    print("Mean : {0:.4f}".format(svc_scores.mean()))
+    print("Standard deviation: {0:.4f}".format(svc_scores.std()))
     
 #------------------
 # Main
