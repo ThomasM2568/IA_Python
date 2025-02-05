@@ -5,12 +5,13 @@
 - [Installation](#-installation)
 - [Code Explanation](#-code-explanation)
   - [Importing Libraries](#-importing-libraries)
-  - [Loading the Iris Dataset](#-loading-the-iris-dataset)
-  - [Applying K-Means](#-applying-k-means)
-  - [Assigning Names to Clusters](#-assigning-names-to-clusters)
-  - [Dimensionality Reduction with PCA](#-dimensionality-reduction-with-pca)
-  - [Creating the DataFrame](#-creating-the-dataframe)
-  - [Visualizing Clusters](#-visualizing-clusters)
+  - [Part 1](#-part-1)
+    - [Loading the Iris Dataset](#-loading-the-iris-dataset)
+    - [Applying K-Means](#-applying-k-means)
+    - [Assigning Names to Clusters](#-assigning-names-to-clusters)
+    - [Dimensionality Reduction with PCA](#-dimensionality-reduction-with-pca)
+    - [Creating the DataFrame](#-creating-the-dataframe)
+    - [Visualizing Clusters](#-visualizing-clusters)
 
 
 
@@ -54,6 +55,8 @@ from ucimlrepo import fetch_ucirepo
 - **PCA**: for dimensionality reduction.
 - **KMeans**: for clustering.
 - **fetch_ucirepo**: for retrieving the Iris dataset.
+
+## 🔹 Part 1
 
 ### 🔹 Loading the Iris Dataset
 
