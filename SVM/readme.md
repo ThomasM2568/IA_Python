@@ -144,6 +144,12 @@ def plot_accuracy(accuracy):
 
 - Displays **SVM model accuracy**.
 
+##### 🔹 Why Accuracy Varies Across Datasets
+
+The accuracy of a classification model depends on the nature of the dataset. Some models, like SVM, perform better when classes are linearly separable, while Random Forest and neural networks handle nonlinear relationships and complex data more effectively. The amount of data is also a key factor: neural networks require a large volume of data to generalize well, whereas decision trees and Random Forest can be effective with smaller datasets. Additionally, the presence of noise and outliers affects models differently, with tree-based methods often being more robust than linear models.  
+
+Other factors also influence performance, such as dataset dimensionality, class balance, and hyperparameter tuning. For example, an imbalanced dataset can be problematic for SVM, whereas Random Forest can manage such imbalance more effectively. Parameter tuning is crucial for certain models, such as selecting the right kernel for SVM or the architecture for a neural network. Ultimately, there is no universally best model—multiple approaches should be tested, and cross-validation should be used to determine which one performs best based on the dataset’s specific characteristics.
+
 ## 5️⃣ Conclusion
 <a name="conclusion"></a>
 SVM is an effective classification model for the **Iris dataset**, achieving high accuracy. Cross-validation confirms the model’s stability, and visualization provides insight into decision boundaries.
