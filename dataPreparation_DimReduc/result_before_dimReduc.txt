@@ -1,0 +1,5 @@
+SVM: 0.7062
+Decision Tree: 0.6633
+Random Forest: 0.7220
+SGD Classifier: 0.7028
+Neural Network: 0.6429
