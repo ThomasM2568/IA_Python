@@ -1,0 +1,13 @@
+>>> %Run -c $EDITOR_CONTENT
+[8 5 7 ... 7 6 7]
+[6 5 6 ... 6 5 5]
+0.5253846153846153
+[0.53923077 0.52809854 0.53733641 0.5504234 ]
+Mean : 0.5388
+Standard deviation: 0.0079
+SVM: 0.5254
+Decision Tree: 0.5992
+Random Forest: 0.6862
+SGD Classifier: 0.4131
+Neural Network: 0.5292
+>>> 
