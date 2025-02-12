@@ -116,26 +116,69 @@ df['Species'] = clusters
 
 ### 🔹 Visualizing Clusters
 <a name="visualizing-clusters"></a>
+
 #### 🔹 K-Means Clustering Plot
 ```python
-plt.figure(figsize=(8, 6))
-sns.scatterplot(x='PCA1', y='PCA2', hue=df['Species'], palette='Set1', data=df, s=100, edgecolor='k')
-plt.title("KMeans Clustering with Species Labels")
-plt.xlabel("Principal Component 1")
-plt.ylabel("Principal Component 2")
-plt.legend(title="Species")
-plt.show()
+def plot_kmeans(df):
+    """ Create KMeans clustering plot."""
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.scatterplot(x='PCA1', y='PCA2', hue=df['Species'], palette='Set1', data=df, s=100, edgecolor='k', ax=ax)
+    ax.set_title("KMeans Clustering with Species Labels")
+    ax.set_xlabel("Principal Component 1")
+    ax.set_ylabel("Principal Component 2")
+    ax.legend(title="Species")
+    return fig
 ```
+- Uses **Seaborn** for better aesthetics.
+- `hue=df['Species']`: Colors points by cluster.
+- `s=100, edgecolor='k'`: Improves point visibility.
 
 #### 🔹 Hierarchical Clustering Dendrogram
 ```python
-plt.figure(figsize=(10, 6))
-dendrogram(linkage_matrix, truncate_mode="level", p=10)
-plt.title("Dendrogram of Hierarchical Clustering")
-plt.xlabel("Data Points")
-plt.ylabel("Distance")
-plt.show()
+def plot_dendrogram(X):
+    """Create hierarchical clustering dendrogram plot."""
+    linkage_matrix = linkage(X, method='average')
+    fig, ax = plt.subplots(figsize=(10, 6))
+    dendrogram(linkage_matrix, truncate_mode="level", p=10, ax=ax)
+    ax.set_title("Dendrogram of Hierarchical Clustering")
+    ax.set_xlabel("Data Points")
+    ax.set_ylabel("Distance")
+    return fig
 ```
+- Uses **Scipy’s dendrogram** to visualize hierarchical clustering.
+- `truncate_mode="level", p=10`: Shows only the first 10 levels.
+- Helps identify optimal cluster separation.
+
+#### 🔹 MeanShift Clustering Plot
+```python
+def plot_meanshift(df):
+    """Create MeanShift clustering plot."""
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.scatterplot(x='PCA1', y='PCA2', hue=df['MeanShift'], palette='Set1', data=df, s=100, edgecolor='k', ax=ax)
+    ax.set_title("MeanShift Clustering with Species Labels")
+    ax.set_xlabel("Principal Component 1")
+    ax.set_ylabel("Principal Component 2")
+    ax.legend(title="Species")
+    return fig
+```
+- **MeanShift** clustering assigns different numbers of clusters dynamically.
+- **Comparison with KMeans**: Allows non-uniform cluster sizes.
+
+#### 🔹 Elbow Method Plot for Optimal K
+```python
+def plot_elbow(wcss):
+    """Create Elbow Method plot."""
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.plot(range(1, len(wcss) + 1), wcss, marker='o')
+    ax.set_title("Elbow Method for Optimal K")
+    ax.set_xlabel("Number of Clusters (K)")
+    ax.set_ylabel("WCSS (Within-Cluster Sum of Squares)")
+    return fig
+```
+- **WCSS (Within-Cluster Sum of Squares)** measures clustering compactness.
+- **The “elbow” point** suggests the optimal K for KMeans.
+
+
 
 ## Conclusion
 <a name="conclusion"></a>
