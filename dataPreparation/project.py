@@ -45,7 +45,7 @@ if isinstance(X, pd.DataFrame):
         X = pd.concat([X, X_encoded], axis=1)
 
 # Feature selection
-selector = VarianceThreshold(threshold=np.median(np.var(X, axis=0)))
+selector = VarianceThreshold(threshold=np.median(np.var(X, axis=0))) # Remove features with low variance
 X = selector.fit_transform(X)
 
 select_k_best = SelectKBest(f_classif, k=min(10, X.shape[1]))
