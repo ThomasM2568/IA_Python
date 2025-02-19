@@ -1,7 +1,5 @@
 #Pandas Advanced Grouping and Aggregation
 
-# GroupBy and Aggregation in Pandas
-
 ## Code Explanation
 <a name="code-explanation"></a>
 
