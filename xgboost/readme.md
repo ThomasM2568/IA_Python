@@ -1,4 +1,4 @@
-# xgboost
+# XGBoost-Based Classification on UCI Adult Dataset
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -14,7 +14,7 @@
 
 ## 1️⃣ Introduction
 <a name="introduction"></a>
-This project utilizes machine learning techniques, including data preprocessing and predictive modeling, using the XGBoost framework. The dataset is sourced from the UCI Machine Learning Repository.
+This project implements a machine learning pipeline using the XGBoost framework to perform binary classification on the Adult dataset from the UCI Machine Learning Repository. The dataset is preprocessed using encoding techniques, split into training, validation, and test sets, and evaluated using cross-validation.
 
 ## 2️⃣ Prerequisites
 <a name="prerequisites"></a>
@@ -85,10 +85,12 @@ Perform a 5-fold cross-validation to evaluate the performance of the XGBoost mod
 
 ## Conclusion
 <a name="conclusion"></a>
-The XGBoost model achieves a reasonable accuracy through cross-validation.
+The XGBoost model demonstrates strong predictive performance through cross-validation, achieving a stable accuracy.
 
-Encoding categorical features improves model performance.
+One-hot encoding of categorical features effectively improves model performance.
 
-The validation and test errors provide insight into model generalization.
+The validation and test errors highlight the model’s ability to generalize to unseen data.
 
-Further tuning (e.g., hyperparameter optimization) can improve results.
+Potential hyperparameter tuning (e.g., adjusting learning rate, max depth, and number of estimators) can further improve results.
+
+Feature selection and engineering could help reduce dimensionality and improve efficiency.
