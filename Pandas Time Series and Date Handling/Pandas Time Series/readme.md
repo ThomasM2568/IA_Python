@@ -1,5 +1,5 @@
 
-# Pandas Time Series and Date Handling
+# Pandas Time Series
 
 ## Code Explanation
 <a name="code-explanation"></a>
