@@ -69,28 +69,6 @@ y = iris.data.targets  # Actual species names
 - `X`: contains the adult features.
 - `y`: contains the adulte targets.
 
-### 🔹 Applying K-Means
-<a name="data-processing"></a>
-```python
-# Split the dataset into train, validation, and test sets
-X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.3, random_state=42)
-X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)
-
-# Ensure that y_train, y_val, and y_test are 1D arrays (not column vectors)
-y_train = y_train.ravel()
-y_val = y_val.ravel()
-y_test = y_test.ravel()
-
-#...
-
-# Fit and transform the training set, and only transform the validation and test sets
-X_train_encoded = encoder.fit_transform(X_train[categorical_cols])
-X_val_encoded = encoder.transform(X_val[categorical_cols])
-X_test_encoded = encoder.transform(X_test[categorical_cols])
-```
-- `test_size=0.5`: we ask for different test size.
-- `random_state`: ensures reproducibility.
-
 ### 🔹 Enabling the XGBoost classifier model 
 <a name="model"></a>
 ```python
